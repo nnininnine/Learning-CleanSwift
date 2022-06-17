@@ -83,13 +83,17 @@ class SplashRouter: NSObject, SplashRoutingLogic, SplashDataPassing
     
     func navigateToLogin(source: SplashViewController, destination: LoginViewController) {
         DispatchQueue.main.async {
-            UIApplication.shared.keyWindow?.rootViewController = destination
+            let rootVC = UINavigationController(rootViewController: destination)
+            rootVC.setNavigationBarHidden(true, animated: false)
+            UIApplication.shared.keyWindow?.rootViewController = rootVC
         }
     }
     
     func navigateToMain(source: SplashViewController, destination: MainViewController) {
         DispatchQueue.main.async {
-            UIApplication.shared.keyWindow?.rootViewController = destination
+            let rootVC = UINavigationController(rootViewController: destination)
+            rootVC.setNavigationBarHidden(true, animated: false)
+            UIApplication.shared.keyWindow?.rootViewController = rootVC
         }
     }
   
@@ -105,6 +109,6 @@ class SplashRouter: NSObject, SplashRoutingLogic, SplashDataPassing
     }
     
     func passDataToMain(source: SplashDataStore, destination: inout MainDataStore) {
-        
+        destination.name = source.name
     }
 }
