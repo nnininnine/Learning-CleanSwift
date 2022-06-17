@@ -1,0 +1,1 @@
+### Example Project for learning Clean Swift architecture.
