@@ -14,7 +14,9 @@ import UIKit
 
 @objc protocol SplashRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+//  func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToLogin(segue: UIStoryboardSegue?)
+    func routeToMain(segue: UIStoryboardSegue?)
 }
 
 protocol SplashDataPassing
@@ -43,6 +45,34 @@ class SplashRouter: NSObject, SplashRoutingLogic, SplashDataPassing
   //    navigateToSomewhere(source: viewController!, destination: destinationVC)
   //  }
   //}
+    
+    func routeToLogin(segue: UIStoryboardSegue?) {
+        if let segue = segue {
+            guard let destinationVC = segue.destination as? LoginViewController else { return }
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToLogin(source: dataStore!, destination: &destinationDS)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToLogin(source: dataStore!, destination: &destinationDS)
+            navigateToLogin(source: viewController!, destination: destinationVC)
+        }
+    }
+    
+    func routeToMain(segue: UIStoryboardSegue?) {
+        if let segue = segue {
+            guard let destinationVC = segue.destination as? MainViewController else { return }
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToMain(source: dataStore!, destination: &destinationDS)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let destinationVC = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToMain(source: dataStore!, destination: &destinationDS)
+            navigateToMain(source: viewController!, destination: destinationVC)
+        }
+    }
 
   // MARK: Navigation
   
@@ -50,6 +80,18 @@ class SplashRouter: NSObject, SplashRoutingLogic, SplashDataPassing
   //{
   //  source.show(destination, sender: nil)
   //}
+    
+    func navigateToLogin(source: SplashViewController, destination: LoginViewController) {
+        DispatchQueue.main.async {
+            UIApplication.shared.keyWindow?.rootViewController = destination
+        }
+    }
+    
+    func navigateToMain(source: SplashViewController, destination: MainViewController) {
+        DispatchQueue.main.async {
+            UIApplication.shared.keyWindow?.rootViewController = destination
+        }
+    }
   
   // MARK: Passing data
   
@@ -57,4 +99,12 @@ class SplashRouter: NSObject, SplashRoutingLogic, SplashDataPassing
   //{
   //  destination.name = source.name
   //}
+    
+    func passDataToLogin(source: SplashDataStore, destination: inout LoginDataStore) {
+        
+    }
+    
+    func passDataToMain(source: SplashDataStore, destination: inout MainDataStore) {
+        
+    }
 }
