@@ -16,16 +16,19 @@ enum Login
 {
   // MARK: Use cases
   
-  enum Something
+  enum Login
   {
     struct Request
     {
+        let name: String
     }
     struct Response
     {
+        let success: Bool
     }
     struct ViewModel
     {
+        let success: Bool
     }
   }
 }
