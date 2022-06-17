@@ -22,6 +22,12 @@
 		693B75DF285C3A940017689A /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75D9285C3A940017689A /* LoginModels.swift */; };
 		693B75E0285C3A940017689A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75DA285C3A940017689A /* LoginViewController.swift */; };
 		693B75E1285C3A940017689A /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75DB285C3A940017689A /* LoginInteractor.swift */; };
+		693B75E8285C3AB80017689A /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75E2285C3AB80017689A /* MainPresenter.swift */; };
+		693B75E9285C3AB80017689A /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75E3285C3AB80017689A /* MainWorker.swift */; };
+		693B75EA285C3AB80017689A /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75E4285C3AB80017689A /* MainRouter.swift */; };
+		693B75EB285C3AB80017689A /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75E5285C3AB80017689A /* MainModels.swift */; };
+		693B75EC285C3AB80017689A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75E6285C3AB80017689A /* MainViewController.swift */; };
+		693B75ED285C3AB80017689A /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75E7285C3AB80017689A /* MainInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,12 @@
 		693B75D9285C3A940017689A /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		693B75DA285C3A940017689A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		693B75DB285C3A940017689A /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		693B75E2285C3AB80017689A /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		693B75E3285C3AB80017689A /* MainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
+		693B75E4285C3AB80017689A /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		693B75E5285C3AB80017689A /* MainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
+		693B75E6285C3AB80017689A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		693B75E7285C3AB80017689A /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +177,12 @@
 		693B75D5285C3A6C0017689A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				693B75E2285C3AB80017689A /* MainPresenter.swift */,
+				693B75E3285C3AB80017689A /* MainWorker.swift */,
+				693B75E4285C3AB80017689A /* MainRouter.swift */,
+				693B75E5285C3AB80017689A /* MainModels.swift */,
+				693B75E6285C3AB80017689A /* MainViewController.swift */,
+				693B75E7285C3AB80017689A /* MainInteractor.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -305,9 +323,15 @@
 				693B75DF285C3A940017689A /* LoginModels.swift in Sources */,
 				693B75DE285C3A940017689A /* LoginRouter.swift in Sources */,
 				693B75E0285C3A940017689A /* LoginViewController.swift in Sources */,
+				693B75EA285C3AB80017689A /* MainRouter.swift in Sources */,
+				693B75E8285C3AB80017689A /* MainPresenter.swift in Sources */,
+				693B75EC285C3AB80017689A /* MainViewController.swift in Sources */,
+				693B75ED285C3AB80017689A /* MainInteractor.swift in Sources */,
 				693B75A8285C36480017689A /* ViewController.swift in Sources */,
 				693B75A4285C36480017689A /* AppDelegate.swift in Sources */,
 				693B75A6285C36480017689A /* SceneDelegate.swift in Sources */,
+				693B75E9285C3AB80017689A /* MainWorker.swift in Sources */,
+				693B75EB285C3AB80017689A /* MainModels.swift in Sources */,
 				693B75E1285C3A940017689A /* LoginInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
