@@ -14,18 +14,24 @@ import UIKit
 
 protocol MainPresentationLogic
 {
-  func presentSomething(response: Main.Something.Response)
+    func presentUser(response: Main.User.Response)
+    func popToLogin()
 }
 
 class MainPresenter: MainPresentationLogic
 {
-  weak var viewController: MainDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Main.Something.Response)
-  {
-    let viewModel = Main.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: MainDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentUser(response: Main.User.Response) {
+        let name = "Welcome back, \(response.name)"
+        let viewModel = Main.User.ViewModel(name: name)
+        
+        viewController?.displayUser(viewModel: viewModel)
+    }
+    
+    func popToLogin() {
+        viewController?.popToLogin()
+    }
 }

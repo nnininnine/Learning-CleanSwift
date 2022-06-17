@@ -14,47 +14,62 @@ import UIKit
 
 @objc protocol MainRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func popToLogin()
 }
 
 protocol MainDataPassing
 {
-  var dataStore: MainDataStore? { get }
+    var dataStore: MainDataStore? { get }
 }
 
 class MainRouter: NSObject, MainRoutingLogic, MainDataPassing
 {
-  weak var viewController: MainViewController?
-  var dataStore: MainDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: MainViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: MainDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    weak var viewController: MainViewController?
+    var dataStore: MainDataStore?
+    
+    // MARK: Routing
+    
+    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    //{
+    //  if let segue = segue {
+    //    let destinationVC = segue.destination as! SomewhereViewController
+    //    var destinationDS = destinationVC.router!.dataStore!
+    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+    //  } else {
+    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
+    //    var destinationDS = destinationVC.router!.dataStore!
+    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
+    //  }
+    //}
+    
+    func popToLogin() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
+        navigateBackToLogin(source: viewController!, destination: destinationVC)
+    }
+    
+    // MARK: Navigation
+    
+    //func navigateToSomewhere(source: MainViewController, destination: SomewhereViewController)
+    //{
+    //  source.show(destination, sender: nil)
+    //}
+    func navigateBackToLogin(source: MainViewController, destination: LoginViewController) {
+        if let vcCount = source.navigationController?.viewControllers.count, vcCount > 1 {
+            source.navigationController?.popViewController(animated: true)
+        } else {
+            let vcs = [destination]
+            (UIApplication.shared.keyWindow?.rootViewController as! UINavigationController).setViewControllers(vcs, animated: true)
+        }
+    }
+    
+    // MARK: Passing data
+    
+    //func passDataToSomewhere(source: MainDataStore, destination: inout SomewhereDataStore)
+    //{
+    //  destination.name = source.name
+    //}
 }

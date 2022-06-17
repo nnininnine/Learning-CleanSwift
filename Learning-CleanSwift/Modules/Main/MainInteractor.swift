@@ -14,28 +14,32 @@ import UIKit
 
 protocol MainBusinessLogic
 {
-  func doSomething(request: Main.Something.Request)
+    func initialVC()
+    func logout()
 }
 
 protocol MainDataStore
 {
-  //var name: String { get set }
+    var name: String { get set }
 }
 
 class MainInteractor: MainBusinessLogic, MainDataStore
 {
-  var presenter: MainPresentationLogic?
-  var worker: MainWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Main.Something.Request)
-  {
-    worker = MainWorker()
-    worker?.doSomeWork()
+    var presenter: MainPresentationLogic?
+    var worker: MainWorker?
+    var name: String = ""
     
-    let response = Main.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    // MARK: Do something
+    
+    func initialVC() {
+        let resp = Main.User.Response(name: name)
+        presenter?.presentUser(response: resp)
+    }
+    
+    func logout() {
+        //clear local data
+        UserDefaults().removeObject(forKey: Constants.nameDefaultsKey)
+        
+        presenter?.popToLogin()
+    }
 }
