@@ -28,6 +28,13 @@
 		693B75EB285C3AB80017689A /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75E5285C3AB80017689A /* MainModels.swift */; };
 		693B75EC285C3AB80017689A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75E6285C3AB80017689A /* MainViewController.swift */; };
 		693B75ED285C3AB80017689A /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75E7285C3AB80017689A /* MainInteractor.swift */; };
+		693B75F0285C3B050017689A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75EF285C3B050017689A /* Constants.swift */; };
+		693B75FA285C3BE30017689A /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75F4285C3BE30017689A /* SplashPresenter.swift */; };
+		693B75FB285C3BE30017689A /* SplashWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75F5285C3BE30017689A /* SplashWorker.swift */; };
+		693B75FC285C3BE30017689A /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75F6285C3BE30017689A /* SplashRouter.swift */; };
+		693B75FD285C3BE30017689A /* SplashModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75F7285C3BE30017689A /* SplashModels.swift */; };
+		693B75FE285C3BE30017689A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75F8285C3BE30017689A /* SplashViewController.swift */; };
+		693B75FF285C3BE30017689A /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B75F9285C3BE30017689A /* SplashInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +80,13 @@
 		693B75E5285C3AB80017689A /* MainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
 		693B75E6285C3AB80017689A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		693B75E7285C3AB80017689A /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		693B75EF285C3B050017689A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		693B75F4285C3BE30017689A /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		693B75F5285C3BE30017689A /* SplashWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWorker.swift; sourceTree = "<group>"; };
+		693B75F6285C3BE30017689A /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		693B75F7285C3BE30017689A /* SplashModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModels.swift; sourceTree = "<group>"; };
+		693B75F8285C3BE30017689A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		693B75F9285C3BE30017689A /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +169,8 @@
 		693B75D3285C3A230017689A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				693B75F1285C3B110017689A /* Splash */,
+				693B75EE285C3AF60017689A /* Utils */,
 				693B75D5285C3A6C0017689A /* Main */,
 				693B75D4285C3A610017689A /* Login */,
 			);
@@ -185,6 +201,27 @@
 				693B75E7285C3AB80017689A /* MainInteractor.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		693B75EE285C3AF60017689A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				693B75EF285C3B050017689A /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		693B75F1285C3B110017689A /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				693B75F4285C3BE30017689A /* SplashPresenter.swift */,
+				693B75F5285C3BE30017689A /* SplashWorker.swift */,
+				693B75F6285C3BE30017689A /* SplashRouter.swift */,
+				693B75F7285C3BE30017689A /* SplashModels.swift */,
+				693B75F8285C3BE30017689A /* SplashViewController.swift */,
+				693B75F9285C3BE30017689A /* SplashInteractor.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,14 +357,21 @@
 			files = (
 				693B75DD285C3A940017689A /* LoginWorker.swift in Sources */,
 				693B75DC285C3A940017689A /* LoginPresenter.swift in Sources */,
+				693B75FB285C3BE30017689A /* SplashWorker.swift in Sources */,
+				693B75FC285C3BE30017689A /* SplashRouter.swift in Sources */,
 				693B75DF285C3A940017689A /* LoginModels.swift in Sources */,
+				693B75FF285C3BE30017689A /* SplashInteractor.swift in Sources */,
 				693B75DE285C3A940017689A /* LoginRouter.swift in Sources */,
 				693B75E0285C3A940017689A /* LoginViewController.swift in Sources */,
 				693B75EA285C3AB80017689A /* MainRouter.swift in Sources */,
+				693B75FD285C3BE30017689A /* SplashModels.swift in Sources */,
 				693B75E8285C3AB80017689A /* MainPresenter.swift in Sources */,
+				693B75F0285C3B050017689A /* Constants.swift in Sources */,
 				693B75EC285C3AB80017689A /* MainViewController.swift in Sources */,
+				693B75FE285C3BE30017689A /* SplashViewController.swift in Sources */,
 				693B75ED285C3AB80017689A /* MainInteractor.swift in Sources */,
 				693B75A8285C36480017689A /* ViewController.swift in Sources */,
+				693B75FA285C3BE30017689A /* SplashPresenter.swift in Sources */,
 				693B75A4285C36480017689A /* AppDelegate.swift in Sources */,
 				693B75A6285C36480017689A /* SceneDelegate.swift in Sources */,
 				693B75E9285C3AB80017689A /* MainWorker.swift in Sources */,
