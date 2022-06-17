@@ -14,28 +14,35 @@ import UIKit
 
 protocol SplashBusinessLogic
 {
-  func doSomething(request: Splash.Something.Request)
+    func initialVC()
 }
 
 protocol SplashDataStore
 {
-  //var name: String { get set }
+    var name: String { get set }
 }
 
 class SplashInteractor: SplashBusinessLogic, SplashDataStore
 {
-  var presenter: SplashPresentationLogic?
-  var worker: SplashWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Splash.Something.Request)
-  {
-    worker = SplashWorker()
-    worker?.doSomeWork()
+    var presenter: SplashPresentationLogic?
+    var worker: SplashWorker?
+    var name: String = ""
     
-    let response = Splash.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    // MARK: Do something
+    
+    
+    func initialVC() {
+        name = UserDefaults().string(forKey: Constants.nameDefaultsKey) ?? ""
+        
+        switch name.isEmpty {
+        case false:
+            // goToMain
+            let response = Splash.LocalStorage.Response(success: true)
+            presenter?.presentName(response: response)
+        case true:
+            // goToLogin
+            let response = Splash.LocalStorage.Response(success: false)
+            presenter?.presentName(response: response)
+        }
+    }
 }

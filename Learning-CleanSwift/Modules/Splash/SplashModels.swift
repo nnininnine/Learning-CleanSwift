@@ -16,16 +16,18 @@ enum Splash
 {
   // MARK: Use cases
   
-  enum Something
+  enum LocalStorage
   {
     struct Request
     {
     }
     struct Response
     {
+        let success: Bool
     }
     struct ViewModel
     {
+        let success: Bool
     }
   }
 }
