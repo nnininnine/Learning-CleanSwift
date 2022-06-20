@@ -137,7 +137,8 @@
 		693B75A2285C36480017689A /* Learning-CleanSwift */ = {
 			isa = PBXGroup;
 			children = (
-				693B75D3285C3A230017689A /* Modules */,
+				693B75EE285C3AF60017689A /* Utils */,
+				693B75D3285C3A230017689A /* Screens */,
 				693B75A3285C36480017689A /* AppDelegate.swift */,
 				693B75A5285C36480017689A /* SceneDelegate.swift */,
 				693B75A7285C36480017689A /* ViewController.swift */,
@@ -166,15 +167,14 @@
 			path = "Learning-CleanSwiftUITests";
 			sourceTree = "<group>";
 		};
-		693B75D3285C3A230017689A /* Modules */ = {
+		693B75D3285C3A230017689A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				693B75F1285C3B110017689A /* Splash */,
-				693B75EE285C3AF60017689A /* Utils */,
 				693B75D5285C3A6C0017689A /* Main */,
 				693B75D4285C3A610017689A /* Login */,
 			);
-			path = Modules;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		693B75D4285C3A610017689A /* Login */ = {
